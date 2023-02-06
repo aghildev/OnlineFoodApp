@@ -6,10 +6,16 @@
     box-sizing: border-box;
     font-family: 'Permanent Marker', cursive;
 }
-
+a{
+    text-decoration: none;
+}
+li>a{
+    color:#fff;
+}
 body{
     /* background-color: #353839; */
-    background-color: #131313;
+    /* background-color: #131313; */
+    background-color: grey;
     /* background-color: #12343b; */
 }
 
@@ -41,6 +47,17 @@ body{
     width: 350px;
     height: 400px;
 
+}
+.card-shimmer{
+    width: 350px;
+    height: 350px;
+    background:black;
+   
+    margin: 10px;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
 }
 .card>img{
     width: 100%;
@@ -144,4 +161,9 @@ body{
     .footer .row a i{
     margin:0% 3%;
     }
+    }
+
+    .menu-container{
+        display: flex;
+        justify-content: space-between;
     }

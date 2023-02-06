@@ -4,8 +4,8 @@ function Footer() {
   return (
     <>
       <footer>
-        <div class="footer">
-          <div class="row">
+        <div className="footer">
+          <div className="row">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
             <a href="#"><i class="fa fa-youtube"></i></a>
@@ -20,7 +20,7 @@ function Footer() {
               <li><a href="#">Career</a></li>
             </ul>
           </div>
-          <div class="row">
+          <div className="row">
             INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
           </div>
         </div>
