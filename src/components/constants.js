@@ -1,5 +1,6 @@
 export const IMG_BASE_URL= "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
 export const RESTO_MENU_URL="https://www.swiggy.com/dapi/menu/v4/full?lat=19.14287788958732&lng=73.00082512199879&menuId="
+export const RESTO_LIST_URL ="https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.14287788958732&lng=73.00082512199879&page_type=DESKTOP_WEB_LISTING"
 
 // RestaurantList is JSON Data for displaying cards
 export const restaurantData = [
