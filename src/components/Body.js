@@ -1,11 +1,12 @@
 import React,{useEffect, useState}from 'react'
 import { Link } from "react-router-dom";
-import useRestoList from '../utils/hooks/useRestoList';
+
 import {restaurantData} from "./constants"
 import RestaurantCard from "./RestaurantCard"
 import ShimmerUi from './ShimmerUi';
 import filterData from '../utils/Filter';
 import {RESTO_LIST_URL} from "./constants"
+import useOnlineStatus from '../utils/hooks/useOnlineStatus';
 
 
 function Body() {
@@ -14,7 +15,7 @@ function Body() {
     const[filteredRestaurants,setFilteredRestaurants] = useState([])
     
     useEffect(()=>{
-        console.log("useEffect Triggered")
+        //console.log("useEffect Triggered")
         getRestaurants()
       },[])
       const getRestaurants = async()=>{
@@ -25,9 +26,12 @@ function Body() {
        
       }
 
-   
+   const isOnline = useOnlineStatus()
+   if(!isOnline) {
+         return <h1>Sorry..Internet Connection Interupted</h1>
+   }
 
-    ///const {allRestaurants,filteredRestaurants} = useRestoList()
+  
    
     if (!allRestaurants) return null;
   return (allRestaurants.length===0)?<ShimmerUi/>: (
