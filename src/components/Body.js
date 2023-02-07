@@ -1,8 +1,10 @@
 import React,{useEffect, useState}from 'react'
 import { Link } from "react-router-dom";
+import useRestoList from '../utils/hooks/useRestoList';
 import {restaurantData} from "./constants"
 import RestaurantCard from "./RestaurantCard"
 import ShimmerUi from './ShimmerUi';
+
 
 function filterData(searchText, allRestaurants) {
     const filterData = allRestaurants.filter((restaurant) =>
@@ -13,20 +15,10 @@ function filterData(searchText, allRestaurants) {
   }
 function Body() {
     const [searchText, setSearchText] = useState("");
-    const [allRestaurants, setAllRestaurants] = useState([]);
-    const[filteredRestaurants,setFilteredRestaurants] = useState([])
-    useEffect(()=>{
-      console.log("useEffect Triggered")
-      getRestaurants()
-    },[])
-    const getRestaurants = async()=>{
-      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.14287788958732&lng=73.00082512199879&page_type=DESKTOP_WEB_LISTING");
-      const json = await data.json()
-      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards)
-      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards)
-      //console.log()
-     // console.log(filteredRestaurants)
-    }
+   
+
+    const {allRestaurants,filteredRestaurants} = useRestoList()
+   
     if (!allRestaurants) return null;
   return (allRestaurants.length===0)?<ShimmerUi/>: (
     <>
