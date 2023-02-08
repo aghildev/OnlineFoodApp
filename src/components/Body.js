@@ -35,16 +35,16 @@ function Body() {
    
     if (!allRestaurants) return null;
   return (allRestaurants.length===0)?<ShimmerUi/>: (
-    <>
+    <div className="bg-slate-900 ">
     <input 
-    className = "searchbar"type="text" 
+    className = "p-2 w-56 rounded-lg"type="text" 
     placeholder="Search For The Restaurants"
     value={searchText}
     onChange={(e) => setSearchText(e.target.value)}
     
     />
     <button 
-    className="search-btn"
+    className="rounded-full px-5 py-2  bg-teal-400"
     onClick={() => {
         //console.log("cl")
             // filter the data
@@ -55,7 +55,7 @@ function Body() {
             //console.log(restaurants)
           }}
         >Search</button>
-    <div className="cards-container">
+    <div className="flex flex-wrap gap-10 w-full ml-10">
        {filteredRestaurants.map((restaurant)=>{
         return(
              <Link to = {"/restaurant/"+ restaurant.data.id}  key={restaurant.data.id}>
@@ -64,7 +64,7 @@ function Body() {
         )
        })}
     </div>
-    </>
+    </div>
   )
 }
 

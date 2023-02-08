@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="header-container">
+    <div className="flex justify-between items-center text-white bg-slate-700 shadow-2xl">
     <Link to="/">
-      <div className="logo">
-        <img src={logo} alt="logo" />
+      <div className=" w-20 rounded-t-lg">
+        <img className ="rounded-r-lg" src={logo} alt="logo" />
       </div>
       </Link>
-      <div className="nav-items">
-        <ul>
+      <div >
+        <ul className="flex px-5">
           
-            <li><Link to="/">Home</Link></li>
+            <li className="px-5"><Link to="/">Home</Link></li>
           
          
-            <li> <Link to="/about">About </Link></li>
+            <li className="px-5"> <Link to="/about">About </Link></li>
          
           
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/instamart">InstaMart</Link></li>
+            <li className="px-5"><Link to="/contact">Contact</Link></li>
+            <li className="px-5"><Link to="/instamart">InstaMart</Link></li>
           
           <li>Cart</li>
         </ul>

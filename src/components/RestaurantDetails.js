@@ -17,24 +17,24 @@ function RestaurantDetails() {
   //if(!restoData) {return null}
 
   return (!restoData) ? <ShimmerUi /> : (
-    <div className="menu-container">
+    <div className="flex justify-between">
       <div>
         {/* <h1>I am the restaurant with id:{id}</h1> */}
-        <h2>{restoData.name}</h2>
+        <h2 className="text-2xl font-bold">{restoData.name}</h2>
         <img src={IMG_BASE_URL + restoData?.cloudinaryImageId} alt="" />
-        <h2>{restoData?.avgRating}</h2>
+        <h2 className="font-bold">{restoData?.avgRating}</h2>
 
-        <h2>{restoData?.costForTwoMsg}</h2>
+        <h2 className="font-bold">{restoData?.costForTwoMsg}</h2>
 
-        <h2>{restoData?.cuisines?.join(", ")}</h2>
-        <h2>{restoData?.city},{restoData?.area}</h2>
+        <h2 className="font-bold">{restoData?.cuisines?.join(", ")}</h2>
+        <h2 className="font-bold">{restoData?.city},{restoData?.area}</h2>
       </div>
       <div>
-      <h1>Menu</h1>
+      <h1 className="text-2xl font-bold">Menu</h1>
           <ul style={{listStyleTpe:"disc"}}>
             {restoData?.menu?.items && Object.values(restoData.menu.items).map((item)=>{
               return(
-                <li key={item.id}>{item.name}</li>
+                <li  className="font-semibold"key={item.id}>{item.name}</li>
               )
             })}
           </ul>

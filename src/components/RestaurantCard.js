@@ -9,8 +9,8 @@ function RestaurantCard({cloudinaryImageId,
     costForTwoString,
     avgRating}) {
     return (
-        <div className="card">
-            <img src={IMG_BASE_URL + cloudinaryImageId} alt="" />
+        <div className="border-solid border-2 border-sky-500 p-9 w-96 shadow-lg shadow-cyan-500/50 rounded-lg text-slate-400">
+            <img className = "w-full" src={IMG_BASE_URL + cloudinaryImageId} alt="" />
             <h2>{name}</h2>
             <h5>{cuisines.join(", ")}</h5>
             <h6>{area}</h6>
